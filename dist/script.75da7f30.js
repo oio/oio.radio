@@ -126,27 +126,26 @@ var _static = _interopRequireDefault(require("./static.gif"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var on = true;
+var keys = ["q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF", "cqIxo6l4eeaYMkLcZPGJnQdMoP5V4zWT", "44OyxHJgyRmAz4FCyp9IQf4gMafvSlNR", "j7BL2bRNpiil1re1QorRGdrx2fdAUl1M", "YTLay1ZytLqLwfPq3spUAtA0dddPjlBi", "ukNYGeEVE3lvQjxZglDghcifIOyKCCHc", "5MFUOWfllMf4uBQSdt9EU5h3GfA5bTl2"];
+var on = false;
+var counter = 0;
 document.addEventListener("DOMContentLoaded", function (event) {
   // Initiate gifLoop for set interval
-  var refresh;
-  var counter = 0; // Duration count in seconds
+  var refresh; // Duration count in seconds
 
   var duration = 1000 * 5; // Giphy API defaults
 
   var giphy = {
     baseURL: "https://api.giphy.com/v1/gifs/",
-    apiKey: "q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF",
+    apiKey: keys[counter],
     tag: "trippy",
     type: "random",
     rating: "pg-13"
-  }; // Target gif-wrap container
-
-  var $gif_wrap = document.getElementById("gif-wrap"); // Giphy API URL
-
-  var giphyURL = encodeURI(giphy.baseURL + giphy.type + "?api_key=" + giphy.apiKey + "&tag=" + giphy.tag + "&rating=" + giphy.rating);
+  };
 
   var newGif = function newGif() {
+    var key = keys[counter];
+    var giphyURL = encodeURI(giphy.baseURL + giphy.type + "?api_key=" + key + "&tag=" + giphy.tag + "&rating=" + giphy.rating);
     fetch(giphyURL).then(function (res) {
       return res.json();
     }).then(function (out) {
@@ -176,8 +175,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
   if (on) // Call Giphy API for new gif
-    newGif(); // const newGifButton = document.getElementById('new-gif');
-  // newGifButton.onclick = newGif
+    newGif();
 });
 },{"./static.gif":"static.gif"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -207,7 +205,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56757" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57333" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
