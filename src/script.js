@@ -1,3 +1,5 @@
+import static from "./static.gif"
+
 document.addEventListener("DOMContentLoaded", function(event) {
 	// Initiate gifLoop for set interval
     var refresh;
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             if (counter % 2 == 0) 
                 newGif();            
             else         
-                document.querySelector(".channel").style.backgroundImage =  "url('static.gif')"            
+                document.querySelector(".channel").style.backgroundImage =  "url('" + `${static}` + "')"
 		}, duration);
 	};
 

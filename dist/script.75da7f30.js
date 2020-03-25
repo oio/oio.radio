@@ -117,7 +117,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"script.js":[function(require,module,exports) {
+})({"static.gif":[function(require,module,exports) {
+module.exports = "/static.de249e6c.gif";
+},{}],"script.js":[function(require,module,exports) {
+"use strict";
+
+var _static = _interopRequireDefault(require("./static.gif"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 document.addEventListener("DOMContentLoaded", function (event) {
   // Initiate gifLoop for set interval
   var refresh;
@@ -162,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     refresh = setInterval(function () {
       counter++; // Call Giphy API for new gif
 
-      if (counter % 2 == 0) newGif();else document.querySelector(".channel").style.backgroundImage = "url('static.gif')";
+      if (counter % 2 == 0) newGif();else document.querySelector(".channel").style.backgroundImage = "url('" + "".concat(_static.default) + "')";
     }, duration);
   }; // Call Giphy API for new gif
 
@@ -170,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   newGif(); // const newGifButton = document.getElementById('new-gif');
   // newGifButton.onclick = newGif
 });
-},{}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./static.gif":"static.gif"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -198,7 +206,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57313" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60328" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
