@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.7"
+  }
+}
