@@ -1,7 +1,16 @@
 body
     background url("static.gif") no-repeat center center fixed;
     background-size cover
-        
+
+.channel
+    position fixed
+    top 0
+    left 0
+    width 100vw
+    height 100vh
+    background url("static.gif") no-repeat center center fixed;
+    background-size cover
+
 
 .all 
     position absolute
@@ -10,14 +19,15 @@ body
     transform translate(-50%, -50%)
     text-align center
 
-p,h1  
+p,h1,a  
     font-family 'VT323', monospace
     color white
+    text-decoration none
 p    
     font-size 24px
     margin 10px 0 20px 0
 
-h1
+h1, a
     font-weight: normal
     font-size 72px
     margin-bottom 10px
@@ -25,3 +35,16 @@ h1
 audio             
     width 200px
             
+#gif-wrap {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #000;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+}
