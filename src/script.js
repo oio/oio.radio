@@ -1,6 +1,6 @@
 import static from "./static.gif"
 
-const on = true
+const on = false
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	// Initiate gifLoop for set interval
