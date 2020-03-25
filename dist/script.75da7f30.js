@@ -126,6 +126,7 @@ var _static = _interopRequireDefault(require("./static.gif"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var on = true;
 document.addEventListener("DOMContentLoaded", function (event) {
   // Initiate gifLoop for set interval
   var refresh;
@@ -172,10 +173,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       if (counter % 2 == 0) newGif();else document.querySelector(".channel").style.backgroundImage = "url('" + "".concat(_static.default) + "')";
     }, duration);
-  }; // Call Giphy API for new gif
+  };
 
-
-  newGif(); // const newGifButton = document.getElementById('new-gif');
+  if (on) // Call Giphy API for new gif
+    newGif(); // const newGifButton = document.getElementById('new-gif');
   // newGifButton.onclick = newGif
 });
 },{"./static.gif":"static.gif"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -206,7 +207,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55325" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56757" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

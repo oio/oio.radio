@@ -1,5 +1,7 @@
 import static from "./static.gif"
 
+const on = true
+
 document.addEventListener("DOMContentLoaded", function(event) {
 	// Initiate gifLoop for set interval
     var refresh;
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	var renderGif = _giphy => {		
 		// Set gif as bg image
 		document.querySelector(".channel").style.backgroundImage =  "url('" + _giphy.image_original_url + "')"
-
+		
 		// Start duration countdown
 		refreshRate();
 	};
@@ -60,8 +62,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}, duration);
 	};
 
+	if (on) 
 	// Call Giphy API for new gif
-	newGif();
+		newGif();
 	
 	
 	// const newGifButton = document.getElementById('new-gif');
