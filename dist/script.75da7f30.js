@@ -120,13 +120,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"script.js":[function(require,module,exports) {
 document.addEventListener("DOMContentLoaded", function (event) {
   // Initiate gifLoop for set interval
-  var refresh; // Duration count in seconds
+  var refresh;
+  var counter = 0; // Duration count in seconds
 
-  var duration = 1000 * 3; // Giphy API defaults
+  var duration = 1000 * 5; // Giphy API defaults
 
   var giphy = {
     baseURL: "https://api.giphy.com/v1/gifs/",
-    apiKey: "0UTRbFtkMxAplrohufYco5IY74U8hOes",
+    apiKey: "q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF",
     tag: "trippy",
     type: "random",
     rating: "pg-13"
@@ -159,8 +160,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Reset set intervals
     clearInterval(refresh);
     refresh = setInterval(function () {
-      // Call Giphy API for new gif
-      if (Math.random() > 0.7) newGif();else document.querySelector(".channel").style.backgroundImage = "url('static.gif')";
+      counter++; // Call Giphy API for new gif
+
+      if (counter % 2 == 0) newGif();else document.querySelector(".channel").style.backgroundImage = "url('static.gif')";
     }, duration);
   }; // Call Giphy API for new gif
 
@@ -196,7 +198,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54712" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57313" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

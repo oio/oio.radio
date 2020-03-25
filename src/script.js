@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	// Initiate gifLoop for set interval
-	var refresh;
+    var refresh;
+    let counter = 0
 	// Duration count in seconds
-	const duration = 1000 * 3;
+	const duration = 1000 * 5;
 	// Giphy API defaults
 	const giphy = {
 		baseURL: "https://api.giphy.com/v1/gifs/",
-		apiKey: "0UTRbFtkMxAplrohufYco5IY74U8hOes",
+		apiKey: "q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF",
 		tag: "trippy",
 		type: "random",
 		rating: "pg-13"
@@ -47,9 +48,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	var refreshRate = () => {
 		// Reset set intervals
 		clearInterval(refresh);
-		refresh = setInterval(function() {            
+		refresh = setInterval(function() {  
+            counter++          
             // Call Giphy API for new gif
-            if (Math.random() > 0.7) 
+            if (counter % 2 == 0) 
                 newGif();            
             else         
                 document.querySelector(".channel").style.backgroundImage =  "url('static.gif')"            
