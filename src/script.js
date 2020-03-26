@@ -1,3 +1,5 @@
+import Tabletop from './tabletop.min.js'
+
 const keys = [
 	"q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF",
 	"cqIxo6l4eeaYMkLcZPGJnQdMoP5V4zWT",
@@ -8,12 +10,31 @@ const keys = [
 	"5MFUOWfllMf4uBQSdt9EU5h3GfA5bTl2",
 ]
 
-import static from "./static.gif"
+import static from "./ass/static.gif"
 
-const on = false
+let on = false
 let counter = 0
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
+	Tabletop.init( {
+		key: 'https://docs.google.com/spreadsheets/d/1bqQ9ULoLgHO60ZNRf6ULOkCkLLI56Gak8a2AVL5_P0Y/',
+		simpleSheet: true 
+	}).then(function(data, tabletop) { 
+		let sheet = data[0]
+		
+		if (sheet.POWER === "ON") on = true
+
+		if (on) document.getElementById("off").remove()
+		else document.getElementById("on").remove()
+
+		document.querySelector(".all").style.opacity = 1
+		
+		document.querySelector("#on h1 a").innerHTML = sheet.header
+		document.querySelector("#on p").innerHTML = sheet.subtitle
+		document.querySelector("#on pre").innerHTML = sheet.subtext
+	})
+
 	// Initiate gifLoop for set interval
     var refresh;    
 	// Duration count in seconds
@@ -74,5 +95,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	if (on) 
 		// Call Giphy API for new gif
 		newGif();
-		
 });

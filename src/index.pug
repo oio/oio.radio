@@ -17,19 +17,20 @@ html(lang="en")
         .channel
 
         //- ON
-        //- .all
-        //-     h1 
-        //-         a(href="https://oio.studio" target="_blank") ò ī ø 
-        //-     p emergency broadcasting channel            
-        //-     audio(autoplay controls preload="none" src="https://stream.oio.radio/stream" type="audio/mp3")                                
-        //-     pre now streaming: matlo waves
+        .all#on
+            h1 
+                a(href="https://oio.studio" target="_blank") ò ī ø 
+            p emergency broadcasting channel            
+            audio(autoplay controls preload="none" src="https://stream.oio.radio/stream" type="audio/mp3")                                
+            pre now streaming: matlo waves
 
         //- OFF
-        .all            
+        .all#off            
             p all transmissions are off
             pre come back tomorrow
             
 
 
 
+        script(src="tabletop.min.js")
         script(src="script.js")

@@ -5,9 +5,10 @@
     "stylus": "^0.54.7"
   },
   "dependencies": {
-    "parcel-plugin-static-files-copy": "^2.3.1"
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "request": "^2.88.2"
   },
   "scripts": {
-    "build":"sudo rm -r .cache && sudo rm -r dist && parcel build src/index.pug --no-source-maps"
+    "build": "sudo rm -r .cache && sudo rm -r dist && parcel build src/index.pug --no-source-maps"
   }
 }
