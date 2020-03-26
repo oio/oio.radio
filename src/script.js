@@ -14,6 +14,7 @@ import static from "./ass/static.gif"
 
 let on = false
 let counter = 0
+let tag = "hypnotic"
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -21,33 +22,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		key: 'https://docs.google.com/spreadsheets/d/1bqQ9ULoLgHO60ZNRf6ULOkCkLLI56Gak8a2AVL5_P0Y/',
 		simpleSheet: true 
 	}).then(function(data, tabletop) { 
+		
 		let sheet = data[0]
 		
+		tag = sheet.gifsTag		
+
 		if (sheet.POWER === "ON") on = true
 		
 		if (on) {
+			newGif()
 			document.getElementById("off").remove()			
 			document.querySelector("#on h1 a").innerHTML = sheet.header
 			document.querySelector("#on p").innerHTML = sheet.subtitle
 			document.querySelector("#on pre").innerHTML = sheet.subtext
-		}
+			document.querySelector("audio").setAttribute("src", "https://stream.oio.radio/stream")
+		}		
 		else {
 			document.getElementById("on").remove()
 			document.querySelector("#off p").innerHTML = sheet.offMessage
 			document.querySelector("#off pre").innerHTML = sheet.offSubMessage
 		}
+
 		document.querySelector(".all").style.opacity = 1		
+
 	})
 
 	// Initiate gifLoop for set interval
     var refresh;    
 	// Duration count in seconds
 	const duration = 1000 * 5;
-	// Giphy API defaults
+	// Giphy API defaults	
 	const giphy = {
 		baseURL: "https://api.giphy.com/v1/gifs/",
 		apiKey: keys[counter],
-		tag: "hypnotic",
+		tag: tag,
 		type: "random",
 		rating: "pg-13"
 	};		
@@ -60,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				"?api_key=" +
 				key +
 				"&tag=" +
-				giphy.tag +
+				tag +
 				"&rating=" +
 				giphy.rating
 		);
@@ -94,9 +102,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             else         
                 document.querySelector(".channel").style.backgroundImage =  "url('" + `${static}` + "')"
 		}, duration);
-	};
-
-	if (on) 
-		// Call Giphy API for new gif
-		newGif();
+	};	
+		
 });
