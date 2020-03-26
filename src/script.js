@@ -10,7 +10,7 @@ const keys = [
 
 import static from "./static.gif"
 
-const on = true
+const on = false
 let counter = 0
 
 document.addEventListener("DOMContentLoaded", function(event) {
