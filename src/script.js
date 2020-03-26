@@ -10,7 +10,7 @@ const keys = [
 
 import static from "./static.gif"
 
-const on = false
+const on = true
 let counter = 0
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	const giphy = {
 		baseURL: "https://api.giphy.com/v1/gifs/",
 		apiKey: keys[counter],
-		tag: "trippy",
+		tag: "animation",
 		type: "random",
 		rating: "pg-13"
 	};		
 
     let newGif = () => {
-		let key = keys[counter]		
+		let key = keys[counter%keys.length]		
 		let giphyURL = encodeURI(
 			giphy.baseURL +
 				giphy.type +

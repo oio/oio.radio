@@ -29,6 +29,9 @@ p {
   font-size: 24px;
   margin: 10px 0 20px 0;
 }
+pre {
+  color: #fff;
+}
 h1,
 a {
   font-weight: normal;
