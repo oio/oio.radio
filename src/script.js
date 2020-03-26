@@ -24,15 +24,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		let sheet = data[0]
 		
 		if (sheet.POWER === "ON") on = true
-
-		if (on) document.getElementById("off").remove()
-		else document.getElementById("on").remove()
-
-		document.querySelector(".all").style.opacity = 1
 		
-		document.querySelector("#on h1 a").innerHTML = sheet.header
-		document.querySelector("#on p").innerHTML = sheet.subtitle
-		document.querySelector("#on pre").innerHTML = sheet.subtext
+		if (on) {
+			document.getElementById("off").remove()			
+			document.querySelector("#on h1 a").innerHTML = sheet.header
+			document.querySelector("#on p").innerHTML = sheet.subtitle
+			document.querySelector("#on pre").innerHTML = sheet.subtext
+		}
+		else {
+			document.getElementById("on").remove()
+			document.querySelector("#off p").innerHTML = sheet.offMessage
+			document.querySelector("#off pre").innerHTML = sheet.offSubMessage
+		}
+		document.querySelector(".all").style.opacity = 1		
 	})
 
 	// Initiate gifLoop for set interval
