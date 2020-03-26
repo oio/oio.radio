@@ -8,6 +8,6 @@
     "parcel-plugin-static-files-copy": "^2.3.1"
   },
   "scripts": {
-    "build":"parcel build src/index.pug --no-source-maps"
+    "build":"sudo rm -r .cache && sudo rm -r dist && parcel build src/index.pug --no-source-maps"
   }
 }

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	const giphy = {
 		baseURL: "https://api.giphy.com/v1/gifs/",
 		apiKey: keys[counter],
-		tag: "colors",
+		tag: "hypnotic",
 		type: "random",
 		rating: "pg-13"
 	};		
