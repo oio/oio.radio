@@ -6,5 +6,8 @@
   },
   "dependencies": {
     "parcel-plugin-static-files-copy": "^2.3.1"
+  },
+  "scripts": {
+    "build":"parcel build src/index.pug"
   }
 }
