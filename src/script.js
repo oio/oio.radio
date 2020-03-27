@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.querySelector(".channel").style.backgroundImage =  "url('" + _giphy.image_original_url + "')"
 		
 		// Start duration countdown
-		refreshRate();
+		// refreshRate();
 	};
 
 	// Call for new gif after duration
@@ -103,5 +103,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 document.querySelector(".channel").style.backgroundImage =  "url('" + `${static}` + "')"
 		}, duration);
 	};	
+
+	// document.body.onclick = newGif
 		
 });
