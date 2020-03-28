@@ -1,5 +1,5 @@
 body
-    background url("./ass/static.gif") no-repeat center center fixed;
+    background url("./ass/static.gif") no-repeat center center fixed
     background-size cover
 
 .channel
@@ -21,7 +21,7 @@ body
     text-align center
     transition opacity 0.3s
 
-p,h1,a  
+p,h1
     font-family 'VT323', monospace
     color white
     text-decoration none
@@ -29,13 +29,17 @@ p
     font-size 24px
     margin 10px 0 20px 0
 
-pre
+pre, footer
     color white
+    font-family monospace
 
-h1, a
+h1
     font-weight: normal
     font-size 72px
     margin-bottom 10px
+    a
+        color white
+        text-decoration none
 
 audio             
     width 200px
@@ -54,3 +58,12 @@ audio
 	background-position: center;
 	z-index: -1;
 }
+
+footer 
+    position fixed
+    bottom 20px
+    width 100%
+    text-align center
+    a 
+        color white
+        
