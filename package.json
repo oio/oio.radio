@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "parcel-plugin-static-files-copy": "^2.3.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "tabletop": "^1.6.2"
   },
   "scripts": {
     "build": "sudo rm -r .cache && sudo rm -r dist && parcel build src/index.pug --no-source-maps"

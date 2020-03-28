@@ -1,4 +1,4 @@
-import Tabletop from './tabletop.min.js'
+import Tabletop from 'tabletop'
 
 const keys = [
 	"q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF",
