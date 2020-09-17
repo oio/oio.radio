@@ -33,6 +33,11 @@ The app is packaged using Yarn.
 You can start by typing 
 
 ```
+yarn install
+```
+then 
+
+```
 yarn start
 ```
 
