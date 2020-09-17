@@ -3,11 +3,15 @@ An open streaming service for the lockdown
 
 ![oio radio](https://raw.githubusercontent.com/oio/oio.radio/master/pics/radioe.jpg)
 
+
+
 ## 🗼 Stream
 
 Anyone can stream on oio radio through a Shoutcast client, such as [Butt](http://danielnoethen.de/butt/).
 
 Streamers can coordinate on the `#oio-radio` channel on Discord for air time.
+
+
 
 ## 👯‍♀️ Info and background images
 
@@ -20,6 +24,7 @@ From there it's possible to switch ON and OFF the radio and update the relevant 
 In the `gifsTag` column it's possible to set a keyword for the background animations.
 
 You can request edit access on the `#oio-radio` channel on Discord.
+
 
 
 ## 👩🏻‍💻 Develop
