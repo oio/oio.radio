@@ -1,7 +1,7 @@
 # oio.radio
 An open streaming service for the lockdown
 
-![oio radio](https://raw.githubusercontent.com/oio/oio.radio/master/pics/radioe.jpg?token=AAUEMADONOGPTQR2U45ZSNK7MOE54)
+![oio radio](https://raw.githubusercontent.com/oio/oio.radio/master/pics/radioe.jpg)
 
 ## 👩🏻‍💻 Develop
 
