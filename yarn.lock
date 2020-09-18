@@ -3214,6 +3214,11 @@ jstransformer@1.0.0:
     is-promise "^2.0.0"
     promise "^7.0.1"
 
+keys.js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/keys.js/-/keys.js-1.0.2.tgz#ebcd10173e9d447f4c0917a595c0241508d63876"
+  integrity sha1-680QFz6dRH9MCRellcAkFQjWOHY=
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"

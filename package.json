@@ -5,6 +5,7 @@
     "stylus": "^0.54.7"
   },
   "dependencies": {
+    "keys.js": "^1.0.2",
     "parcel": "^1.12.4",
     "parcel-plugin-static-files-copy": "^2.3.1",
     "request": "^2.88.2",

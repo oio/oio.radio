@@ -31,6 +31,22 @@ You can request edit access on the `#oio-radio` channel on Discord.
 
 ## 👩🏻‍💻 Develop
 
+### 🔑🙅🏻‍♀️ Keys not included
+
+You need to get API keys from the [Giphy Developer portal](https://developers.giphy.com/). I suggest to create multiple accounts and get 4/5 different keys, to avoid reaching the API limit.
+
+Then create a `keys.js` file in the `src` folder with just this content:
+
+```
+export const keys = [
+    // your keys here
+    "q2Yzkz...",
+    "cqIxo6..."
+]
+```
+
+### 🏃🏻‍♂️ Run the radio
+
 The app is packaged using Yarn.
 You can start by typing 
 

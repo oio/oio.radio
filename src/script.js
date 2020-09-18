@@ -1,16 +1,29 @@
 import Tabletop from 'tabletop'
-
-const keys = [
-	"q2YzkzhfEzjpkMNrvF5vQP2d8gWQ6rZF",
-	"cqIxo6l4eeaYMkLcZPGJnQdMoP5V4zWT",
-	"44OyxHJgyRmAz4FCyp9IQf4gMafvSlNR",
-	"j7BL2bRNpiil1re1QorRGdrx2fdAUl1M",
-	"YTLay1ZytLqLwfPq3spUAtA0dddPjlBi",
-	"ukNYGeEVE3lvQjxZglDghcifIOyKCCHc",
-	"5MFUOWfllMf4uBQSdt9EU5h3GfA5bTl2",
-]
-
 import static from "./ass/static.gif"
+
+
+
+// ██     ██  █████  ██████  ███    ██ ██ ███    ██  ██████  
+// ██     ██ ██   ██ ██   ██ ████   ██ ██ ████   ██ ██       
+// ██  █  ██ ███████ ██████  ██ ██  ██ ██ ██ ██  ██ ██   ███ 
+// ██ ███ ██ ██   ██ ██   ██ ██  ██ ██ ██ ██  ██ ██ ██    ██ 
+//  ███ ███  ██   ██ ██   ██ ██   ████ ██ ██   ████  ██████  
+// 🔑 🙅🏻‍♀️ API keys not included
+import {keys} from "./keys.js"
+// get your own keys from giphy API
+// https://developers.giphy.com/
+// create multiple accounts and get 4/5 different keys
+// so we don't reach the API limit
+// then create a "keys.js" file in this folder 
+// with just this content
+//
+//  export const keys = [
+//    "q2Yzkz...",
+//    "cqIxo6..."
+//  ]
+
+
+
 
 let on = false
 let counter = 0
