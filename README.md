@@ -1,7 +1,7 @@
 # [👉 www.oio.radio](https://oio.radio)
 
 # 📡 oio.radio
-An open streaming service for the lockdown
+An open streaming service for the lockdown by [oio.studio](https://oio.studio)
 
 ![oio radio](https://raw.githubusercontent.com/oio/oio.radio/master/pics/radioe.jpg)
 
