@@ -1,15 +1,14 @@
 {
   "devDependencies": {
+    "@parcel/transformer-pug": "2.6.2",
+    "@parcel/transformer-stylus": "2.6.2",
     "cssnano": "^4.1.10",
     "pug": "^2.0.4",
     "stylus": "^0.54.7"
   },
   "dependencies": {
-    "keys.js": "^1.0.2",
-    "parcel": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.3.1",
-    "request": "^2.88.2",
-    "tabletop": "^1.6.2"
+    "papaparse": "^5.3.2",
+    "parcel": "^2.6.2"
   },
   "scripts": {
     "start": "parcel src/index.pug",
