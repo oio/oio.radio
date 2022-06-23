@@ -16,7 +16,6 @@
   },
   "name": "oio.radio",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:oiostudio/oio.radio.git",
   "author": "matteo@oio.studio",
   "license": "GPL-3.0"
