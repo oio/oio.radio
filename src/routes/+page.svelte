@@ -3,6 +3,8 @@
   import Papa from "papaparse";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import Oio from "$lib/assets/oio.svelte";
+  import { offlineMessages } from "$lib";
 
   let isChannelOn = true;
   let isLoaded = false;
@@ -40,6 +42,7 @@
     // refresh gif every 5 seconds
     setInterval(async () => {
       if (isChannelOn) {
+        // rotate gifs
         counter++;
         if (counter % 2 === 0) {
           const tag = sheet?.gifsTag;
@@ -47,10 +50,19 @@
         } else {
           backgroundImage = staticGif;
         }
+      } else {
+        // get random offline message
+        const randomMessage =
+          offlineMessages[Math.floor(Math.random() * offlineMessages.length)];
+        sheet = {
+          offMessage: randomMessage[0],
+          offSubMessage: randomMessage[1],
+        };
       }
     }, gifDuration);
   });
 
+  // fetchGif
   const fetchGif = async (tag, counter) => {
     const response = await fetch(`/api/getGif?tag=${tag}&counter=${counter}`);
     if (response.ok) {
@@ -70,35 +82,60 @@
 ></div>
 
 {#if isLoaded}
-  <div
-    transition:fade
-    class="absolute z-10 text-white left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-dmono uppercase"
-  >
-    {#if isChannelOn}
-      <h1>
-        <a href="https://oio.studio" target="_blank">{sheet?.header || ""}</a>
-      </h1>
-      <p>{sheet?.subtitle || ""}</p>
-      <audio autoplay controls preload="none" type="audio/mp3">
-        Your browser does not support the audio element.
-        <source src={streamURL} type="audio/mp3" />
-      </audio>
-      <p>{sheet?.subtext || ""}</p>
-    {:else}
-      <p>{sheet?.offMessage || ""}</p>
-      <p>{sheet?.offSubMessage || ""}</p>
-    {/if}
-  </div>
+  <div class="w-full flex justify-center h-screen">
+    <div
+      transition:fade
+      class="text-center w-full relative z-10 inline-flex flex-col text-white py-6 justify-between items-center"
+    >
+      <div class="w-16">
+        <Oio />
+      </div>
+      <div class="font-dmono lowercase relative w-full h-ma">
+        {#if isChannelOn}
+          <h1>
+            <a href="https://oio.studio" target="_blank"
+              >{sheet?.header || ""}</a
+            >
+          </h1>
+          <p>{sheet?.subtitle || ""}</p>
+          <audio autoplay controls preload="none" type="audio/mp3">
+            Your browser does not support the audio element.
+            <source src={streamURL} type="audio/mp3" />
+          </audio>
+          <p>{sheet?.subtext || ""}</p>
+        {:else}
+          {#key sheet}
+            <div
+              class="absolute text-lg -translate-y-1/2 -translate-x-1/2 left-1/2"
+              in:fade={{ duration: 500, delay: 600 }}
+              out:fade={{ duration: 500 }}
+            >
+              <p>
+                <span class="bg-black">
+                  {sheet?.offMessage || ""}
+                </span>
+              </p>
+              <p>
+                <span class="bg-black">
+                  {sheet?.offSubMessage || ""}
+                </span>
+              </p>
+            </div>
+          {/key}
+        {/if}
+      </div>
 
-  <footer
-    transition:fade
-    class="absolute z-10 bottom-4 left-1/2 -translate-x-1/2 text-white"
-  >
-    <p>
-      another experiment from your friends at <a
-        href="//oio.studio"
-        target="_blank">oio</a
-      >
-    </p>
-  </footer>
+      <footer class="font-dmono text-sm">
+        <p>
+          <span class="bg-black">
+            another nice experiment from your friends at <a
+              href="//oio.studio"
+              class="border-b-2 border-primary-yellow"
+              target="_blank">oio</a
+            >
+          </span>
+        </p>
+      </footer>
+    </div>
+  </div>
 {/if}
