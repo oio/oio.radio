@@ -1,22 +1,24 @@
 {
-  "devDependencies": {
-    "@parcel/transformer-pug": "2.6.2",
-    "@parcel/transformer-stylus": "2.6.2",
-    "cssnano": "^4.1.10",
-    "pug": "^2.0.4",
-    "stylus": "^0.54.7"
-  },
-  "dependencies": {
-    "papaparse": "^5.3.2",
-    "parcel": "^2.6.2"
-  },
+  "name": "sveltekit-boilerplate",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "parcel src/index.pug",
-    "build": "sudo rm -r dist && parcel build src/index.pug --no-source-maps"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "name": "oio.radio",
-  "version": "1.0.0",
-  "repository": "git@github.com:oiostudio/oio.radio.git",
-  "author": "matteo@oio.studio",
-  "license": "GPL-3.0"
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "svelte": "^4.2.7",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "papaparse": "^5.4.1"
+  }
 }
