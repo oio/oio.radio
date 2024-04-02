@@ -67,7 +67,7 @@
 {#if isLoaded}
   <div
     transition:fade
-    class="absolute z-10 text-white opacity-100 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+    class="absolute z-10 text-white left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
   >
     {#if isChannelOn}
       <h1>
