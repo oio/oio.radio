@@ -27,10 +27,13 @@
         const tag = sheet?.gifsTag;
         isChannelOn = sheet.POWER === "ON";
 
-        if (isChannelOn) {
-          backgroundImage = await fetchGif(tag, counter);
-        }
         isLoaded = true;
+
+        if (isChannelOn) {
+          setTimeout(async () => {
+            backgroundImage = await fetchGif(tag, counter);
+          }, 1000);
+        }
       },
     });
 
@@ -59,6 +62,8 @@
   };
 </script>
 
+<svelte:body style="background-image: url({backgroundImage});" />
+
 <div
   style="background-image: url({backgroundImage});"
   class="fixed w-full h-screen z-0 bg-no-repeat bg-cover bg-center"
@@ -67,7 +72,7 @@
 {#if isLoaded}
   <div
     transition:fade
-    class="absolute z-10 text-white left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+    class="absolute z-10 text-white left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-dmono uppercase"
   >
     {#if isChannelOn}
       <h1>
@@ -78,10 +83,10 @@
         Your browser does not support the audio element.
         <source src={streamURL} type="audio/mp3" />
       </audio>
-      <pre>{sheet?.subtext || ""}</pre>
+      <p>{sheet?.subtext || ""}</p>
     {:else}
       <p>{sheet?.offMessage || ""}</p>
-      <pre>{sheet?.offSubMessage || ""}</pre>
+      <p>{sheet?.offSubMessage || ""}</p>
     {/if}
   </div>
 
@@ -90,8 +95,10 @@
     class="absolute z-10 bottom-4 left-1/2 -translate-x-1/2 text-white"
   >
     <p>
-      an <a href="//oio.studio" target="_blank">oio.studio</a> experiment by
-      <a href="//matlo.me" target="_blank">matlo</a>
+      another experiment from your friends at <a
+        href="//oio.studio"
+        target="_blank">oio</a
+      >
     </p>
   </footer>
 {/if}
