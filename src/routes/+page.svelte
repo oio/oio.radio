@@ -90,7 +90,9 @@
       <div class="w-16">
         <Oio />
       </div>
-      <div class="font-dmono lowercase relative w-full h-ma">
+      <div
+        class="font-dmono lowercase relative w-full flex-col flex items-center"
+      >
         {#if isChannelOn}
           <h1>
             <a href="https://oio.studio" target="_blank"
@@ -98,7 +100,7 @@
             >
           </h1>
           <p>{sheet?.subtitle || ""}</p>
-          <audio autoplay controls preload="none" type="audio/mp3">
+          <audio class="my-4" autoplay controls preload="none" type="audio/mp3">
             Your browser does not support the audio element.
             <source src={streamURL} type="audio/mp3" />
           </audio>
