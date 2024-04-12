@@ -1,14 +1,12 @@
 import { env } from "$env/dynamic/private";
 import { error } from "@sveltejs/kit";
 
-const keys = env.GIPHY_KEYS.split(", ");
+const key = env.GIPHY_KEY;
 
 // This function fetches a random gif from Giphy based on the given tag
 export async function GET({ url }) {
   // Extract the tag from the query string
   const tag = url.searchParams.get("tag") || "hypnotic";
-  const counter = parseInt(url.searchParams.get("counter") || "0", 10);
-  const key = keys[counter % keys.length];
   const giphyURL = `https://api.giphy.com/v1/gifs/random?api_key=${key}&tag=${tag}&rating=pg-13`;
 
   try {
