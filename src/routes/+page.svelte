@@ -81,7 +81,7 @@
   <meta property="og:image" content="/og.png" />
   <meta property="og:url" content="https://www.oio.radio" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="oio radio" />
+  <meta property="og:site_name" content="oio.radio" />
 </svelte:head>
 
 <div
